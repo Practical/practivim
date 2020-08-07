@@ -9,4 +9,22 @@ endif
 
 syn keyword keyword def expect if else
 syn keyword type U8 U16 U32 U64 S8 S16 S32 S64 Bool Void
-syn keyword Boolean true false
+
+" Comments
+"
+syn region prNestedComment	start="/\*"  end="\*/" contains=prNestedComment,@Spell fold
+syn match  prLineComment	"//.*" contains=@Spell
+
+" Block
+"
+syn region prBlock	start="{" end="}" fold transparent
+
+" Literals
+syn match prDec         display "\<\d[0-9_]*\(u\=l\=\|l\=u\=\)\>"
+syn keyword prBoolean   true false
+
+
+hi def link prNestedComment     Comment
+hi def link prLineComment       Comment
+hi def link prDec               Number
+hi def link prBoolean           Boolean
