@@ -30,7 +30,7 @@ let s:stringBody = '\([^\\"]\|\\[' . s:legalBackslashes . ']\)*'
 execute 'syn match prString      display @"' . s:stringBody . '"@'
 
 " String that contains newline is bad
-syn match prBadString display @"\([^\\"]\|\\.\)*$@
+syn match prBadString display @"\([^\\"]\|\\.\)*\\\?$@
 " String that contains an unauthorized backslash character is bad
 execute 'syn match prBadString   display @"' . s:stringBody . '\\[^' . s:legalBackslashes . ']' . '\([^\\"]\|\\.\)*' . '"@'
 
