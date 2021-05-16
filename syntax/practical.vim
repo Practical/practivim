@@ -7,7 +7,7 @@ if exists("b:current_syntax")
   finish
 endif
 
-syn keyword keyword def decl expect cast if else ref
+syn keyword keyword def decl expect cast if else ref struct
 syn keyword type U8 U16 U32 U64 S8 S16 S32 S64 C8 C16 C32 Bool Void
 
 " Comments
